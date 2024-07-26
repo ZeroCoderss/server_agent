@@ -5,15 +5,18 @@ import {
   listUser,
   createUser,
   notFound,
+  login,
 } from "./helper";
 
 const server = Bun.serve({
   port: 3000,
-  fetch(request) {
+  async fetch(request) {
     const url = new URL(request.url);
     const path = url.pathname;
     if (path === "/" && request.method === "GET") {
       return welcomeServer();
+    } else if (path === "/login" && request.method === "POST") {
+      return await login(request);
     } else if (path === "/jobs" && request.method === "GET") {
       return listJob(request);
     } else if (path === "/jobs" && request.method === "POST") {
