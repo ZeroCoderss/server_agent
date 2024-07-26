@@ -14,6 +14,7 @@ const users = [];
 const authenticate = (request, isAdminTest = false) => {
   const cookieHeader = request.headers.get("Cookie");
   const cookies = parseCookies(cookieHeader);
+  const ipAddr = getClientIp(request);
 
   if (!cookies?.token) {
     return new Response(
@@ -32,9 +33,16 @@ const authenticate = (request, isAdminTest = false) => {
     );
   }
 
-  if (!userData?.email || !userData?.role) {
+  if (!userData?.email || !userData?.role || !userData?.ip) {
     return new Response(
       JSON.stringify({ message: "ERR_UNVERIFIED_USER", status: false }),
+      { status: 403 },
+    );
+  }
+
+  if (userData?.ip !== ipAddr) {
+    return new Response(
+      JSON.stringify({ message: "ERR_EXPIRE_TOKEN", status: false }),
       { status: 403 },
     );
   }
