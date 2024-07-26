@@ -1,0 +1,21 @@
+{
+  "name": "server_agent",
+  "version": "1.0.0",
+  "description": "server agent to give job",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "bun run ./db/migration.js",
+    "run": "bun run index.js",
+    "agent": "bun run agent.js"
+  },
+  "keywords": [
+    "job",
+    "server",
+    "agent"
+  ],
+  "author": "Abhijit Gayen <agayen04@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}

@@ -1,0 +1,6 @@
+
+// for database
+*.db
+
+node_modules
+.env
