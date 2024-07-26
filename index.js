@@ -20,11 +20,11 @@ const server = Bun.serve({
     } else if (path === "/jobs" && request.method === "GET") {
       return listJob(request);
     } else if (path === "/jobs" && request.method === "POST") {
-      return creatJob(request);
+      return await creatJob(request);
     } else if (path === "/users" && request.method === "GET") {
       return listUser(request);
     } else if (path === "/users" && request.method === "POST") {
-      return createUser(request);
+      return await createUser(request);
     }
     return notFound();
   },
