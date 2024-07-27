@@ -5,6 +5,8 @@ import goodbye from "graceful-goodbye";
 
 const worker = new Worker("./agent/agent-worker.js", { smol: true });
 
+console.log('agent is runing')
+
 worker.onmessage = (event) => {
   const jobData = event.data;
   console.log(jobData);

@@ -9,4 +9,8 @@ const defaultUserQuery = db.query(
   `,
 );
 
-await defaultUserQuery.run();
+try {
+    await defaultUserQuery.run();
+}catch (e) {
+    console.log(e.message)
+}
