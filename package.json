@@ -4,9 +4,9 @@
   "description": "server agent to give job",
   "main": "index.js",
   "scripts": {
-    "migrate": "bun run ./db/migration.js",
-    "run": "bun run index.js",
-    "agent": "bun run agent.js"
+    "migrate": "bun run db/migration.js",
+    "server": "bun run index.js",
+    "agent": "bun run agent/index.js"
   },
   "keywords": [
     "job",
@@ -16,6 +16,7 @@
   "author": "Abhijit Gayen <agayen04@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "graceful-goodbye": "^1.3.0"
   }
 }
