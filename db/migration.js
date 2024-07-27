@@ -26,18 +26,6 @@ const userQuery = db.query(
   );
   `,
 );
-
-const defaultUserQuery = db.query(
-  `
-  INSERT INTO users (email, name, role) VALUES ("agayen04@gmail.com", "Abhijit Gayen", "admin")
-  `,
-);
-
+ 
 userQuery.run();
 jobQuery.run();
-
-try {
-  defaultUserQuery.run();
-} catch (e) {
-  console.log(e.message);
-}

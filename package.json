@@ -4,8 +4,8 @@
   "description": "server agent to give job",
   "main": "index.js",
   "scripts": {
-    "migrate": "bun run db/migration.js",
-    "server": "bun run index.js",
+    "migrate": "bun run db/migration.js ",
+    "server": "bun run db/addInitUser.js && bun run index.js",
     "agent": "bun run agent/index.js"
   },
   "keywords": [
