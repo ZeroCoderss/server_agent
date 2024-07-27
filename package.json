@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "migrate": "bun run db/migration.js ",
-    "server": "lsof -ti :3000 | xargs kill -9 && bun run db/addInitUser.js & bun run index.js",
+    "server": "bun run db/addInitUser.js & bun run index.js",
+    "dev": "lsof -ti :3000 | xargs kill -9 && bun run db/addInitUser.js & bun run index.js",
     "agent": "bun run agent/index.js"
   },
   "keywords": [
