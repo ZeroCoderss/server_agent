@@ -11,6 +11,7 @@ const defaultUserQuery = db.query(
 
 try {
     await defaultUserQuery.run();
+    console.log('intiial migrate done')
 }catch (e) {
     console.log(e.message)
 }
