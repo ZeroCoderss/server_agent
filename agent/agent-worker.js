@@ -4,11 +4,9 @@ self.onmessage = function (event) {
 
   console.log("data", data);
 
-  for (let i = 0; i < 1e6; i++) {
-    for (let j = 0; j < 100000; j++) {}
-  }
+  // you need define all work details here
 
-  const result = data; // Example computation
+  const result = data;
 
   // Post the result back to the main thread
   self.postMessage({ result });

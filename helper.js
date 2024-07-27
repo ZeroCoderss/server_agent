@@ -85,7 +85,7 @@ const userVerify = (userData) => {
 };
 
 const welcomeServer = () => {
-  return new Response("Welcome to Bun Agent Server!");
+  return new Response("Welcome to Bun Agent API Server!");
 };
 
 const login = async (request) => {
